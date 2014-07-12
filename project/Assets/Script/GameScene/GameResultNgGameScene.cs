@@ -34,7 +34,7 @@ public class GameResultNgGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
-		if (InputManager.isTouchObject("Game_Over(Clone)")) {
+		if (InputManager.isTouchObject("Game_Over 1(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
 		}
 	}
