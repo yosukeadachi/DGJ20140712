@@ -3,14 +3,21 @@ using System.Collections;
 
 public class Animal : MonoBehaviour {
 
+	public int mCount = 0;
 	// Use this for initialization
 	void Start () {
-	
+		mCount = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(mCount > 0) {
+			mCount--;
+			if(mCount == 0)
+			{
+				rigidbody2D.velocity = Vector3.zero;
+			}
+		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D coll)
@@ -22,6 +29,7 @@ public class Animal : MonoBehaviour {
 		}
 		else if(coll.gameObject.name.StartsWith ("cola_tsubu")) {
 			//cola mituketa!
+			mCount = 50;
 			Vector2 heading = coll.transform.position - gameObject.transform.position;
 			float distance = heading.magnitude;
 			float force = 0.75f;
