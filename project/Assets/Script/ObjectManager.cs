@@ -30,6 +30,7 @@ public class ObjectManager : MonoBehaviour
 		GAME_RULE_MANAGER,
 		COKE_RIVER,
 		GAMECLEAR,
+		COLA_MANAGER,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

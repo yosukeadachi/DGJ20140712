@@ -18,7 +18,8 @@ public class GameMainGameScene : GameScene {
 
 	private int mTsubuIndex;	// okeru tsubu;
 	private int TSUBU_LIMIT = 10;
-	private int mColaLeft = 1000;// ko-ra zanryo;
+	private int COLA_LEFT_LIMIT = 9;
+	private int mColaLeft;// ko-ra zanryo;
 
 	/*
 	 * シーン内オブジェクト;
@@ -31,6 +32,7 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.ROAD_TILE,
 		ObjectManager.eGameObjects.GAME_RULE_MANAGER,
 		ObjectManager.eGameObjects.COKE_RIVER,
+		ObjectManager.eGameObjects.COLA_MANAGER,
 	};
 
 	public AnimalManager.eAnimalObjects[] mAnimalList = {
@@ -44,6 +46,8 @@ public class GameMainGameScene : GameScene {
 		Debug.Log("to Scene main");
 		initObjects (mList);
 		mTsubuIndex = 0;
+		mColaLeft = COLA_LEFT_LIMIT;// ko-ra zanryo;
+		
 		AnimalManager.initObjects(mAnimalList);
 	}
 
@@ -54,6 +58,9 @@ public class GameMainGameScene : GameScene {
 		if (InputManager.isTouchObject("road_tile(Clone)")) {
 			Debug.Log ("cola!");
 			if(mColaLeft > 0) {
+				GameObject _counter = GameObject.Find ("_ColaManager(Clone)");
+				_counter.transform.FindChild ("coke_" + (mColaLeft)).gameObject.SetActive(false);
+
 				mColaLeft--;
 				GameObject _tsubu = GameObject.Find ("cola_tsubu_manager(Clone)").transform.FindChild("cola_tsubu_" + mTsubuIndex).gameObject;
 				Vector3 vec = Input.mousePosition;
@@ -64,6 +71,7 @@ public class GameMainGameScene : GameScene {
 				if(mTsubuIndex == TSUBU_LIMIT) {
 					mTsubuIndex = 0;
 				}
+
 			}
 		}
 	}
