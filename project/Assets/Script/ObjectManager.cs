@@ -21,6 +21,9 @@ public class ObjectManager : MonoBehaviour
 		TOUCH_TO_START = 0,
 		TITLE_BG,
 		GAMEOVER,
+		USAGI,
+		FIREWALL,
+		EXIT,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

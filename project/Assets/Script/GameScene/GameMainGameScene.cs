@@ -20,6 +20,9 @@ public class GameMainGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
+		ObjectManager.eGameObjects.USAGI,
+		ObjectManager.eGameObjects.EXIT,
+		ObjectManager.eGameObjects.FIREWALL,
 	};
 
 	/*
