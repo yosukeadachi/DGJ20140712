@@ -19,6 +19,7 @@ public class TitleMainGameScene : GameScene {
 	 */
 	public ObjectManager.eGameObjects[] mList = {
 		ObjectManager.eGameObjects.TOUCH_TO_START,
+		ObjectManager.eGameObjects.TITLE_BG,
 	};
 
 	/*

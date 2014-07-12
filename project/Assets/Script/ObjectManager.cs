@@ -19,6 +19,7 @@ public class ObjectManager : MonoBehaviour
 	public enum eGameObjects : int
 	{
 		TOUCH_TO_START = 0,
+		TITLE_BG,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;
