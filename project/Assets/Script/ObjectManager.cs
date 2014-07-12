@@ -18,7 +18,7 @@ public class ObjectManager : MonoBehaviour
 	// ゲーム全体で利用するオブジェクト;
 	public enum eGameObjects : int
 	{
-		TITLE_BG = 0,
+		TOUCH_TO_START = 0,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;
