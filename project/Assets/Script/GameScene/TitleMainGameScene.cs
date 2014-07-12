@@ -34,7 +34,7 @@ public class TitleMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
-		if (InputManager.isTouchObject("icon_start(Clone)")) {
+		if (InputManager.isTouchObject("taitle(Clone)")) {
 			SceneController.setChangeScene(SceneController.Scene.GAME_MAIN);
 		}
 	}
