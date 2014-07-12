@@ -30,6 +30,7 @@ public class GameMainGameScene : GameScene {
 		ObjectManager.eGameObjects.FOOD_DROP,
 		ObjectManager.eGameObjects.ROAD_TILE,
 		ObjectManager.eGameObjects.GAME_RULE_MANAGER,
+		ObjectManager.eGameObjects.COKE_RIVER,
 	};
 
 	public AnimalManager.eAnimalObjects[] mAnimalList = {
