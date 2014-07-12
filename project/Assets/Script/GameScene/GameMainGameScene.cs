@@ -55,6 +55,12 @@ public class GameMainGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		if (InputManager.isTouchObject("Coke_river2(Clone)")) {
+			if(mColaLeft < COLA_LEFT_LIMIT) {
+				mColaLeft++;
+			}
+		}
+
 		if (InputManager.isTouchObject("road_tile(Clone)")) {
 			Debug.Log ("cola!");
 			if(mColaLeft > 0) {
@@ -81,6 +87,7 @@ public class GameMainGameScene : GameScene {
 				_counter.SetActive(true);
 			}
 		}
+		Debug.Log ("cola Left:" + mColaLeft);
 	}
 
 	/*
