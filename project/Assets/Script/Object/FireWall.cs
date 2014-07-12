@@ -10,6 +10,6 @@ public class FireWall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		rigidbody2D.velocity = Vector2.up * -0.3f;
 	}
 }

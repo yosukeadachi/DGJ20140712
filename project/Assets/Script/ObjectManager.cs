@@ -24,6 +24,8 @@ public class ObjectManager : MonoBehaviour
 		USAGI,
 		FIREWALL,
 		EXIT,
+		FOOD_DROP,
+		ROAD_TILE,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;
