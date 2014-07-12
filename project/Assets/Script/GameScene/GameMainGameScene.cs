@@ -58,9 +58,6 @@ public class GameMainGameScene : GameScene {
 		if (InputManager.isTouchObject("road_tile(Clone)")) {
 			Debug.Log ("cola!");
 			if(mColaLeft > 0) {
-				GameObject _counter = GameObject.Find ("_ColaManager(Clone)");
-				_counter.transform.FindChild ("coke_" + (mColaLeft)).gameObject.SetActive(false);
-
 				mColaLeft--;
 				GameObject _tsubu = GameObject.Find ("cola_tsubu_manager(Clone)").transform.FindChild("cola_tsubu_" + mTsubuIndex).gameObject;
 				Vector3 vec = Input.mousePosition;
@@ -71,7 +68,17 @@ public class GameMainGameScene : GameScene {
 				if(mTsubuIndex == TSUBU_LIMIT) {
 					mTsubuIndex = 0;
 				}
+			}
+		}
 
+		//
+		for(int i = 0; i <= COLA_LEFT_LIMIT; i++) {
+			GameObject _counter = GameObject.Find ("_ColaManager(Clone)").transform.FindChild ("coke_" + i).gameObject;
+			if(mColaLeft <= i) {
+				_counter.SetActive(false);
+			}
+			else {
+				_counter.SetActive(true);
 			}
 		}
 	}
