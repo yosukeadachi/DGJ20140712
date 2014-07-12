@@ -4,6 +4,7 @@ using System.Collections;
 public class Animal : MonoBehaviour {
 
 	public int mCount = 0;
+	public Transform mTarget;
 	// Use this for initialization
 	void Start () {
 		mCount = 0;
@@ -30,7 +31,8 @@ public class Animal : MonoBehaviour {
 		else if(coll.gameObject.name.StartsWith ("cola_tsubu")) {
 			//cola mituketa!
 			mCount = 50;
-			Vector2 heading = coll.transform.position - gameObject.transform.position;
+			mTarget = coll.transform;
+			Vector2 heading = mTarget.position - gameObject.transform.position;
 			float distance = heading.magnitude;
 			float force = 0.75f;
 			Vector2 direction = heading / distance * force;
