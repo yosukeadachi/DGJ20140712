@@ -24,7 +24,7 @@ public class GameMainGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-		//ObjectManager.eGameObjects.ANIMAL_MANAGER,
+		ObjectManager.eGameObjects.ANIMAL_MANAGER,
 		ObjectManager.eGameObjects.EXIT,
 		ObjectManager.eGameObjects.FIREWALL,
 		ObjectManager.eGameObjects.FOOD_DROP,
@@ -43,7 +43,7 @@ public class GameMainGameScene : GameScene {
 		Debug.Log("to Scene main");
 		initObjects (mList);
 		mTsubuIndex = 0;
-		//AnimalManager.initObjects(mAnimalList);
+		AnimalManager.initObjects(mAnimalList);
 	}
 
 	/*

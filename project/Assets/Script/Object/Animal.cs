@@ -15,15 +15,21 @@ public class Animal : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		Debug.Log ("Animal coll:" + coll.gameObject.name);
-		Debug.Log ("cola_tsubu:" + (coll.gameObject.name.StartsWith ("cola_tsubu")));
+		Debug.Log ("Animal coll:" + coll.gameObject.name + " class:" + coll.GetType().FullName);
 		if(coll.gameObject.name.CompareTo("firewall(Clone)") == 0) {
-			GameRuleManager _manager = (GameRuleManager)GameObject.Find("_GameRuleManager").GetComponent("GameRuleManager");
+			GameRuleManager _manager = (GameRuleManager)GameObject.Find("_GameRuleManager(Clone)").GetComponent("GameRuleManager");
 			_manager.gameOver();
 		}
 		else if(coll.gameObject.name.StartsWith ("cola_tsubu")) {
+			//cola mituketa!
+			Vector2 heading = coll.transform.position - gameObject.transform.position;
+			float distance = heading.magnitude;
+			float force = 0.75f;
+			Vector2 direction = heading / distance * force;
+			rigidbody2D.velocity = direction;
 
-			rigidbody2D.velocity = new Vector2(1.0f, -1.0f);
+			//cola destroy
+			coll.gameObject.SetActive(false);
 		}
 		else if(coll.gameObject.name.StartsWith ("exit")) {
 			gameObject.SetActive(false);

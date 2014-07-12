@@ -10,15 +10,16 @@ public class GameRuleManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		if(AnimalManager.getActiveCount() == 0) {
-//			gameSuccess();
-//		}
+		if(AnimalManager.getActiveCount() == 0) {
+			gameSuccess();
+		}
 	}
 
 	/**
 	 * ;
 	 */
 	public void gameOver() {
+		AnimalManager.destroyStageObjectsAll();
 		SceneController.setChangeScene(SceneController.Scene.GAME_RESULT_NG);
 	}
 

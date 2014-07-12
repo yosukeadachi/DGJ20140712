@@ -85,6 +85,9 @@ public class AnimalManager : MonoBehaviour {
 	 */
 	public static int getActiveCount() {
 		int _count = 0;
+		if(mStageObjects == null) {
+			return 0;
+		}
 		foreach(GameObject _obj in mStageObjects ) {
 			if(_obj.activeSelf) {
 				_count++;
