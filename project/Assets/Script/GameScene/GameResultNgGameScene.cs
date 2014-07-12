@@ -19,6 +19,7 @@ public class GameResultNgGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
+		ObjectManager.eGameObjects.GAMEOVER,
 	};
 
 	/*
@@ -33,6 +34,9 @@ public class GameResultNgGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
+		if (InputManager.isTouchObject("gameover(Clone)")) {
+			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
+		}
 	}
 	
 	/*
