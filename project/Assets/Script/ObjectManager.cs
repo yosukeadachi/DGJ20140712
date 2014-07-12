@@ -26,6 +26,8 @@ public class ObjectManager : MonoBehaviour
 		EXIT,
 		FOOD_DROP,
 		ROAD_TILE,
+		ANIMAL_MANAGER,
+		GAME_RULE_MANAGER,
 	}
 	public GameObject[] mGameObjectListBase;
 	public static GameObject[] mGameObjectListTemp;

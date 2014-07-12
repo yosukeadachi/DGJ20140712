@@ -10,7 +10,9 @@ public class GameRuleManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+//		if(AnimalManager.getActiveCount() == 0) {
+//			gameSuccess();
+//		}
 	}
 
 	/**
@@ -18,5 +20,12 @@ public class GameRuleManager : MonoBehaviour {
 	 */
 	public void gameOver() {
 		SceneController.setChangeScene(SceneController.Scene.GAME_RESULT_NG);
+	}
+
+	/**
+	 * ;
+	 */
+	public void gameSuccess() {
+		SceneController.setChangeScene(SceneController.Scene.GAME_RESULT_OK);
 	}
 }

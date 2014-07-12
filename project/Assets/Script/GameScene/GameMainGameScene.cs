@@ -24,14 +24,17 @@ public class GameMainGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
-		ObjectManager.eGameObjects.USAGI,
+		//ObjectManager.eGameObjects.ANIMAL_MANAGER,
 		ObjectManager.eGameObjects.EXIT,
 		ObjectManager.eGameObjects.FIREWALL,
 		ObjectManager.eGameObjects.FOOD_DROP,
 		ObjectManager.eGameObjects.ROAD_TILE,
+		ObjectManager.eGameObjects.GAME_RULE_MANAGER,
 	};
 
-
+	public AnimalManager.eAnimalObjects[] mAnimalList = {
+		AnimalManager.eAnimalObjects.USAGI,
+	};
 
 	/*
 	 * 初期化;
@@ -40,6 +43,7 @@ public class GameMainGameScene : GameScene {
 		Debug.Log("to Scene main");
 		initObjects (mList);
 		mTsubuIndex = 0;
+		//AnimalManager.initObjects(mAnimalList);
 	}
 
 	/*
@@ -54,7 +58,6 @@ public class GameMainGameScene : GameScene {
 				Vector3 vec = Input.mousePosition;
 				vec.z = 10f;
 				_tsubu.transform.position = Camera.main.ScreenToWorldPoint(vec);
-			//	_tsubu.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 				_tsubu.SetActive(true);
 				mTsubuIndex++;
 				if(mTsubuIndex == TSUBU_LIMIT) {
