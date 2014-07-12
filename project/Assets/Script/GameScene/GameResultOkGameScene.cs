@@ -19,6 +19,7 @@ public class GameResultOkGameScene : GameScene {
 	 * シーン内オブジェクト;
 	 */
 	public ObjectManager.eGameObjects[] mList = {
+		ObjectManager.eGameObjects.GAMECLEAR,
 	};
 
 	/*
@@ -32,7 +33,9 @@ public class GameResultOkGameScene : GameScene {
 	 * 更新;
 	 */
 	public override void update(){
-
+		if (InputManager.isTouchObject("Game_Clear(Clone)")) {
+			SceneController.setChangeScene(SceneController.Scene.TITLE_MAIN);
+		}
 	}
 	
 	/*
